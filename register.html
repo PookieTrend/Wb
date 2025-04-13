@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pookie Trend | Register</title>
+    <meta name="description" content="Login - Register Template">
+    <meta name="author" content="Lorenzo Angelino aka MrLolok">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login-register.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("images/Login-Background2.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0%;
+            padding: 0%;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* OTP Popup Styling */
+        #otp-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #otp-content {
+            background-color: #333;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            width: 300px;
+        }
+    </style>
+    <!-- Supabase Client Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+</head>
+
+<body>
+    <div id="container-register">
+        <div id="title">
+            <i class="material-icons lock">lock</i> Register
+        </div>
+
+        <!-- Error Message Box -->
+        <div id="errorAlert" class="error-alert" style="display: none;">
+            <span id="errorMessage"></span>
+            <button class="close-btn" id="error-close-btn">✖</button>
+        </div>
+
+
+        <form id="register-form">
+            <div class="input">
+                <div class="input-addon">
+                    <i class="material-icons">email</i>
+                </div>
+                <input id="email" placeholder="Email" type="email" required class="validate" autocomplete="off">
+
+
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="input">
+                <div class="input-addon">
+                    <i class="material-icons">face</i>
+                </div>
+                <input id="username" placeholder="Username" type="text" required class="validate" autocomplete="off">
+
+
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="input">
+                <div class="input-addon">
+                    <i class="material-icons">vpn_key</i>
+                </div>
+                <input id="password" placeholder="Password" type="password" required class="validate"
+                    autocomplete="off">
+
+
+            </div>
+
+            <div class="privacy">
+                <a href="#">Terms of Service</a>
+            </div>
+
+            <div class="remember-me">
+                <input type="checkbox">
+                <span style="color: #DDD">I accept Terms of Service</span>
+            </div>
+
+            <input type="submit" value="Register" />
+        </form>
+
+        <div class="register">
+            Do you already have an account?
+            <a href="login.html"><button id="register-link">Log In here</button></a>
+        </div>
+    </div>
+
+    <!-- OTP Popup -->
+    <div id="otp-popup" style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    ">
+        <div style="
+        background: #333;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        width: 300px;
+    ">
+            <h2 style="color: #C71585;">Enter OTP</h2>
+            <input type="text" id="otp-input" placeholder="Enter OTP" style="
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: none;
+    ">
+            <button id="verify-otp" style="
+        background-color: #C71585;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    ">Verify OTP</button>
+        </div>
+    </div>
+
+
+    <div id="privacy-popup" style="display: none;">
+        <div id="privacy-content" style="
+        background: rgba(0, 0, 0, 0.95);
+        padding: 30px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 600px;
+        margin: 0 auto;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        overflow-y: auto;
+        max-height: 80vh;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        text-align: center; /* Center text alignment */
+    ">
+            <h2 style="color: #C71585;">Terms of Service</h2>
+            <p>We value your privacy and are dedicated to safeguarding your personal information. Please review the
+                following policies:</p>
+            <ul style="text-align: left;">
+                <li><strong>Information Collection:</strong> We collect details like username, email, and password for
+                    account creation and management.</li>
+                <li><strong>Data Usage:</strong> Your information is used to enhance your experience. We do not share
+                    your data with third parties without consent.</li>
+                <li><strong>Security Measures:</strong> Robust measures are implemented to protect your data from
+                    unauthorized access.</li>
+                <li><strong>Cookies:</strong> Our website uses cookies to provide a better user experience.</li>
+            </ul>
+            <button id="close-privacy-popup" style="
+            margin-top: 20px;
+            background-color: #C71585;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: block;
+            margin: 20px auto; /* Centering the button */
+        ">Close</button>
+        </div>
+    </div>
+
+    <script src="js/register.js"></script>
+</body>
+
+</html>

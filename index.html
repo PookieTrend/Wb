@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from htmlbeans.com/html/schon/homepage1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 16 Apr 2023 13:55:49 GMT -->
+
+<head>
+	<!-- set the encoding of your site -->
+	<meta charset="utf-8">
+	<!-- set the viewport width and initial-scale on mobile devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pookie Trend | Home</title>
+	<!-- include the site stylesheet -->
+	<link
+		href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900,900italic%7cMontserrat:400,700%7cOxygen:400,300,700'
+		rel='stylesheet' type='text/css'>
+	<!-- include the site stylesheet -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- include the site stylesheet -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- include the site stylesheet -->
+	<link rel="stylesheet" href="css/icon-fonts.css">
+	<!-- include the site stylesheet -->
+	<link rel="stylesheet" href="css/main.css">
+	<!-- include the site stylesheet -->
+	<link rel="stylesheet" href="css/responsive.css">
+
+	<style>
+		/* 3D Hover Effect on Product Cards */
+		.mt-product1 .box {
+			transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+		}
+
+		.mt-product1 .box:hover {
+			transform: scale(1.05) rotateX(5deg) rotateY(5deg);
+			box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.2);
+		}
+
+		/* Glowing Text Effect */
+		.mt-product1 .txt .title a {
+			transition: text-shadow 0.3s ease-in-out;
+		}
+
+		.mt-product1 .txt .title a:hover {
+			text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+		}
+
+		/* Button Hover Effect */
+		.btn-type2,
+		.btn-type3 {
+			transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+		}
+
+		.btn-type2:hover,
+		.btn-type3:hover {
+			background-color: #C71585;
+			/* Elegant pink shade */
+			transform: scale(1.1);
+		}
+
+		/* Image Hover Zoom Effect */
+		.mt-product1 .box img {
+			transition: transform 0.3s ease-in-out;
+		}
+
+		.mt-product1 .box:hover img {
+			transform: scale(1.1);
+		}
+
+		@media (max-width: 480px) {
+			.mt-main-slider .slick-dots {
+				bottom: 2px;
+			}
+		}
+
+		@media (max-width: 768px) {
+			.mt-main-slider .slick-dots {
+				bottom: 2px;
+			}
+		}
+	</style>
+	<script>
+		function adjustText() {
+			const centeredText = document.getElementById('Log');
+			if (window.innerWidth <= 768) { // Mobile View
+				centeredText.style.left = "50%";
+				centeredText.style.marginTop = "4px";
+			}
+		}
+		window.addEventListener('resize', adjustText);
+		window.addEventListener('DOMContentLoaded', adjustText);
+	</script>
+</head>
+
+<body style="background-color:black;">
+	<!-- main container of all the page elements -->
+	<div id="wrapper">
+		<!-- Page Loader -->
+		<div id="pre-loader" class="loader-container">
+			<div class="loader">
+				<img src="images/svg/rings.svg" alt="loader">
+			</div>
+		</div>
+		<!-- W1 start here -->
+		<div class="w1">
+			<!-- mt header style4 start here -->
+			<header id="mt-header" class="style4">
+				<!-- mt bottom bar start here -->
+				<div class="mt-bottom-bar" style="background-color:black;">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-xs-12">
+								<!-- mt logo start here -->
+								<div class="mt-logo"><a href="#"><img src="images/LOGO7.png" alt="schon"></a></div>
+								<div id="Log" style="position: absolute; left: 14%; transform: translateX(-50%); z-index: 1; margin-top: 9px;">
+									<span style="color: rgb(253, 242, 244); font-size: 24px; font-weight: bold;">Pookie Trend</span>
+								</div>
+								<!-- mt icon list start here -->
+								<ul class="mt-icon-list">
+									<li class="hidden-lg hidden-md">
+										<a href="#" class="bar-opener mobile-toggle" style="background-color: white;">
+											<span class="bar"></span>
+											<span class="bar small"></span>
+											<span class="bar"></span>
+										</a>
+									</li>
+									<li></li>
+									<li>
+										<a href="order-shopping-cart.html" id="view-cart" class="cart-opener">
+											<span class="icon-handbag" style="color: white;"
+												onmouseover="this.style.color='#C71585'"
+												onmouseout="this.style.color='white'"></span>
+										</a>
+									</li>
+								</ul><!-- mt icon list end here -->
+								<!-- navigation start here -->
+								<nav id="nav">
+									<ul>
+										<li>
+											<a href="#" style="color: white; background-color: black;"
+												onmouseover="this.style.color='#C71585'"
+												onmouseout="this.style.color='white'">HOME <i
+													class="fa fa-angle-down hidden-lg hidden-md"
+													aria-hidden="true"></i></a>
+										</li>
+										<li>
+											<a href="product.html" style="color: white; background-color: black;"
+												onmouseover="this.style.color='#C71585'"
+												onmouseout="this.style.color='white'">PRODUCTS</a>
+										</li>
+										<li><a href="about-us.html" style="color: white; background-color: black;"
+												onmouseover="this.style.color='#C71585'"
+												onmouseout="this.style.color='white'">About</a></li>
+										<li>
+											<a href="contact-us.html" style="color: white; background-color: black;"
+												onmouseover="this.style.color='#C71585'"
+												onmouseout="this.style.color='white'">Contact <i
+													class="fa fa-angle-down hidden-lg hidden-md"
+													aria-hidden="true"></i></a>
+										</li>
+									</ul>
+								</nav>
+								<!-- mt icon list end here -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- mt bottom bar end here -->
+				<span class="mt-side-over"></span>
+			</header><!-- mt header style4 end here -->
+			<!-- mt side menu start here -->
+			<div class="mt-side-menu">
+				<!-- mt holder start here -->
+				<div class="mt-holder">
+					<a href="#" class="side-close"><span></span><span></span></a>
+					<strong class="mt-side-title">MY ACCOUNT</strong>
+					<!-- mt side widget start here -->
+					<div class="mt-side-widget">
+						<header>
+							<span class="mt-side-subtitle">SIGN IN</span>
+							<p>Welcome back! Sign in to Your Account</p>
+						</header>
+						<form action="#">
+							<fieldset>
+								<input type="text" placeholder="Username or email address" class="input">
+								<input type="password" placeholder="Password" class="input">
+								<div class="box">
+									<span class="left"><input class="checkbox" type="checkbox" id="check1"><label
+											for="check1">Remember Me</label></span>
+									<a href="#" class="help">Help?</a>
+								</div>
+								<button type="submit" class="btn-type1">Login</button>
+							</fieldset>
+						</form>
+					</div>
+					<!-- mt side widget end here -->
+					<div class="or-divider"><span class="txt">or</span></div>
+					<!-- mt side widget start here -->
+					<div class="mt-side-widget">
+						<header>
+							<span class="mt-side-subtitle">CREATE NEW ACCOUNT</span>
+							<p>Create your very own account</p>
+						</header>
+						<form action="#">
+							<fieldset>
+								<input type="text" placeholder="Username or email address" class="input">
+								<button type="submit" class="btn-type1">Register</button>
+							</fieldset>
+						</form>
+					</div>
+					<!-- mt side widget end here -->
+				</div>
+				<!-- mt holder end here -->
+			</div><!-- mt side menu end here -->
+			<!-- mt search popup start here -->
+			<div class="mt-search-popup">
+				<div class="mt-holder">
+					<a href="#" class="search-close"><span></span><span></span></a>
+					<div class="mt-frame">
+						<form action="#">
+							<fieldset>
+								<input type="text" placeholder="Search...">
+								<span class="icon-microphone"></span>
+								<button class="icon-magnifier" type="submit"></button>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div><!-- mt search popup end here -->
+			<!-- mt main slider start here -->
+			<div class="mt-main-slider">
+				<!-- slider banner-slider start here -->
+				<div class="slider banner-slider">
+				<!-- Sale Banner -->
+					<!-- holder start here -->
+					<!-- <div class="holder text-center" style="background-image: url(images/sliders/Img78.png);">
+						<div class="container">
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="text centerize">
+										<strong class="title" style="color: white;"></strong>
+										<h1 style="color: white; font-size: 45px;"></h1>
+										<h2 style="color: #1E90FF; font-size: 33px;"></h2>
+										<div class="txt">
+											<p style="color: white"></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div> -->
+					<!-- holder end here -->
+					<!-- holder start here -->
+					<div class="holder text-center" style="background-image: url(images/sliders/Img04.jpg);">
+						<div class="container">
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="text centerize">
+										<strong class="title" style="color: white;">TRENDY T-SHIRT COLLECTION</strong>
+										<h1 style="color: white; font-size: 45px;">NEW ARRIVALS</h1>
+										<h2 style="color: #1E90FF; font-size: 33px;">PREMIUM GRAPHIC TEES</h2>
+										<div class="txt">
+											<p style="color: white">Discover stylish and comfortable T-shirts designed
+												for every occasion.
+												From minimalistic prints to bold statements, find your perfect fit
+												today!</p>
+										</div>
+										<a href="OVERSIZED_PRODUCTS.html" class="shop" style="color: white;">shop
+											now</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- holder end here -->
+
+					<!-- holder start here -->
+					<div class="holder text-center" style="background-image: url(images/sliders/Img55.jpg);">
+						<div class="container">
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="text right">
+										<strong class="title" style="color: white;">HEROIC APPAREL COLLECTION</strong>
+										<h1 style="color: white; font-size: 45px;">SUPERHERO T-SHIRTS</h1>
+										<h2 style="color: #F56991; font-size: 33px;">UNLEASH YOUR INNER HERO</h2>
+										<div class="txt">
+											<p style="color:white;">Power up your wardrobe with our epic superhero print
+												T-shirts! From
+												legendary comic icons to fan-favorite movie heroes, wear your fandom
+												with pride. Crafted for comfort and style, these tees are perfect for
+												every superhero enthusiast.</p>
+										</div>
+										<a href="SUPERHERO_PRODUCTS.html" class="shop" style="color:white;">shop now</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- holder end here -->
+				</div>
+				<!-- slider regular end here -->
+			</div><!-- mt main slider end here -->
+			<!-- mt main start here -->
+			<main id="mt-main">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12">
+							<!-- mt producttabs start here -->
+							<div class="mt-producttabs wow fadeInUp" data-wow-delay="0.4s">
+								<!-- producttabs start here -->
+								<ul class="producttabs">
+									<li><a href="#tab1" class="active"
+											style="color:white; font-size: larger;">FEATURED</a></li>
+									<li><a href="#tab2" style="color:white; font-size: larger;">LATEST</a></li>
+								</ul>
+								<!-- producttabs end here -->
+								<div class="tab-content text-center">
+									<div id="tab1">
+										<!-- tabs slider start here -->
+										<div class="tabs-slider">
+											<!-- slide start here -->
+											<div class="slide">
+												<!-- mt product1 center start here -->
+												<div class="mt-product1 mt-paddingbottom20">
+													<div class="box">
+														<div class="b1">
+															<div class="b2">
+																<a href="product.html"><img
+																		src="https://qonnughbkdvopqwqmxow.supabase.co/storage/v1/object/sign/product-images/OVERSIZED%20T-SHIRT%201.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwcm9kdWN0LWltYWdlcy9PVkVSU0laRUQgVC1TSElSVCAxLmpwZyIsImlhdCI6MTc0MjQ3NzUyNSwiZXhwIjoxOTAwMTU3NTI1fQ.6u6RBLZa94ChilnjGVLwXjEKFZtPyZM3NO1vMQKj8hM"
+																		alt="image description"></a>
+																<!-- <span class="caption">
+																	<span class="off">25% off</span>
+																</span> -->
+																
+
+															</div>
+														</div>
+													</div>
+													<div class="txt">
+														<strong class="title"><a href="product.html"
+																style="color: white;">Ring Warrior T-Shirt</a></strong>
+														<span class="price"><i class="fa fa-rupee"></i>
+															<span>287</span></span>
+													</div>
+												</div><!-- mt product1 center end here -->
+												<!-- mt product1 center start here -->
+												<div class="mt-product1 mt-paddingbottom20">
+													<div class="box">
+														<div class="b1">
+															<div class="b2">
+																<a href="product.html"><img
+																		src="https://qonnughbkdvopqwqmxow.supabase.co/storage/v1/object/sign/product-images/OVERSIZED%20T-SHIRT%203.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwcm9kdWN0LWltYWdlcy9PVkVSU0laRUQgVC1TSElSVCAzLmpwZyIsImlhdCI6MTc0MjQ3NzYzNCwiZXhwIjoxOTAwMTU3NjM0fQ.uV6SCRzmN30Yw1-WebEQOSDhz3Ahb0ARj2dTEkeQRTI"
+																		alt="image description"></a>
+																		<!-- <span class="caption">
+																			<span class="off">25% off</span>
+																		</span> -->
+
+															</div>
+														</div>
+													</div>
+													<div class="txt">
+														<strong class="title"><a href="product.html"
+																style="color: white;">Onyx Flame T-Shirt</a></strong>
+														<span class="price"><i class="fa fa-rupee"></i>
+															<span>287</span></span>
+													</div>
+												</div>
+												<!-- mt product1 center end here -->
+											</div>
+											<!-- slide end here -->
+											<!-- slide start here -->
+											<div class="slide">
+												<!-- mt product1 center start here -->
+												<div class="mt-product1 mt-paddingbottom20">
+													<div class="box">
+														<div class="b1">
+															<div class="b2">
+																<a href="product.html"><img
+																		src="https://qonnughbkdvopqwqmxow.supabase.co/storage/v1/object/sign/product-images/OVERSIZED%20T-SHIRT%204.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwcm9kdWN0LWltYWdlcy9PVkVSU0laRUQgVC1TSElSVCA0LmpwZyIsImlhdCI6MTc0MjQ3ODUyMCwiZXhwIjoxOTAwMTU4NTIwfQ.h0lazY8rTfv5s0qWIne8ZWLv_mj-3D51ENeOqqN1Xaw"
+																		alt="image description"></a>
+																		<!-- <span class="caption">
+																			<span class="off">25% off</span>
+																		</span> -->
+															</div>
+														</div>
+													</div>
+													<div class="txt">
+														<strong class="title"><a href="product.html"
+																style="color: white;">Legendary Saiyan Tee</a></strong>
+														<span class="price"><i class="fa fa-rupee"></i>
+															<span>399</span></span>
+													</div>
+												</div><!-- mt product1 center end here -->
+												<!-- mt product1 center start here -->
+												<div class="mt-product1 mt-paddingbottom20">
+													<div class="box">
+														<div class="b1">
+															<div class="b2">
+																<a href="product.html"><img
+																		src="https://qonnughbkdvopqwqmxow.supabase.co/storage/v1/object/sign/product-images/OVERSIZED%20T-SHIRT%202.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwcm9kdWN0LWltYWdlcy9PVkVSU0laRUQgVC1TSElSVCAyLmpwZyIsImlhdCI6MTc0MjQ3ODU2MSwiZXhwIjoxOTAwMTU4NTYxfQ.sbyIKwPZjo6OFvgRDgBji5h4nO0oDhoWYT0o0QRH4Po"
+																		alt="image description"></a>
+																<!-- <span class="caption">
+																	<span class="off">25% off</span>
+																</span> -->
+															</div>
+														</div>
+													</div>
+													<div class="txt">
+														<strong class="title"><a href="product.html"
+																style="color: white;">Fancy Feathered Friend
+																T-Shirt</a></strong>
+														<span class="price"><i class="fa fa-rupee"></i>
+															<span>399</span></span>
+													</div>
+												</div>
+												<!-- mt product1 center end here -->
+											</div>
+											<!-- slide end here -->
+										</div>
+										<!-- tabs slider end here -->
+									</div>
+									<div id="tab2">
+										<!-- tabs slider start here -->
+										<div class="tabs-slider">
+											<!-- slide start here -->
+											<div class="slide">
+												<!-- mt product1 center start here -->
+												<div class="mt-product1 mt-paddingbottom20">
+													<div class="box">
+														<div class="b1">
+															<div class="b2">
+																<a href="product.html"><img
+																		src="https://qonnughbkdvopqwqmxow.supabase.co/storage/v1/object/sign/product-images/SPIDERMAN.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwcm9kdWN0LWltYWdlcy9TUElERVJNQU4uanBnIiwiaWF0IjoxNzQyNDc3NDg5LCJleHAiOjE5MDAxNTc0ODl9.S86chDOZJtwOf-DC98jSnkMYzQbu76CksIWpRaN3Zgg"
+																		alt="image description"></a>
+																		<!-- <span class="caption">
+																			<span class="off">10% Off</span>
+																		</span> -->
+
+															</div>
+														</div>
+													</div>
+													<div class="txt">
+														<strong class="title"><a href="product.html"
+																style="color: white;">Shadow Spider T-Shirt</a></strong>
+														<span class="price"><i class="fa fa-rupee"></i>
+															<span>287</span></span>
+													</div>
+												</div>
+												<!-- mt product1 center end here -->
+												<!-- mt product1 center start here -->
+												<div class="mt-product1 mt-paddingbottom20">
+													<div class="box">
+														<div class="b1">
+															<div class="b2">
+																<a href="product.html"><img
+																		src="https://qonnughbkdvopqwqmxow.supabase.co/storage/v1/object/sign/product-images/LOKI.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwcm9kdWN0LWltYWdlcy9MT0tJLmpwZyIsImlhdCI6MTc0MjQ3NzU3MiwiZXhwIjoxOTAwMTU3NTcyfQ.xzYMtOwaqXxOlUVsRWZ_gzobipKGhbPZIZWCHcxMvPs"
+																		alt="image description"></a>
+																		<!-- <span class="caption">
+																			<span class="off">10% Off</span>
+																		</span> -->
+
+															</div>
+														</div>
+													</div>
+													<div class="txt">
+														<strong class="title"><a href="product.html"
+																style="color: white;">LOKI - The God of Mischief
+																T-Shirt</a></strong>
+														<span class="price"><i class="fa fa-rupee"></i>
+															<span>287</span></span>
+													</div>
+												</div><!-- mt product1 center end here -->
+											</div>
+											<!-- slide end here -->
+											<!-- slide start here -->
+											<div class="slide">
+												<!-- mt product1 center start here -->
+												<div class="mt-product1 mt-paddingbottom20">
+													<div class="box">
+														<div class="b1">
+															<div class="b2">
+																<a href="product.html"><img
+																		src="https://qonnughbkdvopqwqmxow.supabase.co/storage/v1/object/sign/product-images/BLACK_PANTHER.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwcm9kdWN0LWltYWdlcy9CTEFDS19QQU5USEVSLmpwZyIsImlhdCI6MTc0MjQ3NzcwMiwiZXhwIjoxOTAwMTU3NzAyfQ.EbZqjLsB8mkZKCSYEQOdS6i9jRKKo49TIdoc95TfUDY"
+																		alt="image description"></a>
+																<!-- <span class="caption">
+																	<span class="off">10% Off</span>
+																</span> -->
+
+															</div>
+														</div>
+													</div>
+													<div class="txt">
+														<strong class="title"><a href="product.html"
+																style="color: white;">Blaze of the Panther
+																T-Shirt</a></strong>
+														<span class="price"><i class="fa fa-rupee"></i>
+															<span>399</span></span>
+													</div>
+												</div>
+												<!-- mt product1 center end here -->
+												<!-- mt product1 center start here -->
+												<div class="mt-product1 mt-paddingbottom20">
+													<div class="box">
+														<div class="b1">
+															<div class="b2">
+																<a href="product.html"><img
+																		src="https://qonnughbkdvopqwqmxow.supabase.co/storage/v1/object/sign/product-images/IRONMAN.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwcm9kdWN0LWltYWdlcy9JUk9OTUFOLmpwZyIsImlhdCI6MTc0MjQ3ODE5MywiZXhwIjoxOTAwMTU4MTkzfQ.8RdGV-In9o-a9PMGXyngYm5qHCZCefGFbWhEUhknUx4"
+																		alt="image description"></a>
+																		<!-- <span class="caption">
+																			<span class="off">10% Off</span>
+																		</span> -->
+
+															</div>
+														</div>
+													</div>
+													<div class="txt">
+														<strong class="title"><a href="product.html"
+																style="color: white;">Iron Man Legacy
+																T-Shirt</a></strong>
+														<span class="price"><i class="fa fa-rupee"></i>
+															<span>399</span></span>
+													</div>
+												</div><!-- mt product1 center end here -->
+											</div>
+											<!-- slide end here -->
+										</div>
+										<!-- tabs slider end here -->
+									</div>
+								</div>
+							</div>
+							<!-- mt producttabs end here -->
+						</div>
+					</div>
+				</div>
+				<!-- mt bestseller start here -->
+				<div class="mt-bestseller bg-grey text-center wow fadeInUp" data-wow-delay="0.4s"
+					style="background-color: black;">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12 mt-heading text-uppercase">
+								<h2 class="heading" style="color:white; text-align: justify;">BEST SELLER</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="bestseller-slider">
+									<div class="slide">
+										<!-- mt product1 center start here -->
+										<div class="mt-product1 large">
+											<div class="box">
+												<div class="b1">
+													<div class="b2">
+														<a href="product.html"><img
+																src="https://qonnughbkdvopqwqmxow.supabase.co/storage/v1/object/sign/product-images/LOKI.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwcm9kdWN0LWltYWdlcy9MT0tJLmpwZyIsImlhdCI6MTc0MjQ3NzU3MiwiZXhwIjoxOTAwMTU3NTcyfQ.xzYMtOwaqXxOlUVsRWZ_gzobipKGhbPZIZWCHcxMvPs"
+																alt="image description"></a>
+														<!-- <span class="caption">
+															<span class="best-price">Best Price</span>
+														</span> -->
+
+													</div>
+												</div>
+											</div>
+										</div><!-- mt product1 center end here -->
+									</div>
+									<div class="slide">
+										<!-- mt product1 center start here -->
+										<div class="mt-product1 large">
+											<div class="box">
+												<div class="b1">
+													<div class="b2">
+														<a href="product.html"><img
+																src="https://qonnughbkdvopqwqmxow.supabase.co/storage/v1/object/sign/product-images/SUPERMAN.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwcm9kdWN0LWltYWdlcy9TVVBFUk1BTi5qcGciLCJpYXQiOjE3NDI0NzgyMjEsImV4cCI6MTkwMDE1ODIyMX0.K64bgg7DTrk6ErnpWR5T06hWdXu09CA135ArzGN4_J4"
+																alt="image description"></a>
+																<!-- <span class="caption">
+																	<span class="best-price">Best Price</span>
+																</span> -->
+
+													</div>
+												</div>
+											</div>
+										</div><!-- mt product1 center end here -->
+									</div>
+									<div class="slide">
+										<!-- mt product1 center start here -->
+										<div class="mt-product1 large">
+											<div class="box">
+												<div class="b1">
+													<div class="b2">
+														<a href="product.html"><img
+																src="https://qonnughbkdvopqwqmxow.supabase.co/storage/v1/object/sign/product-images/SPIDERMAN.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwcm9kdWN0LWltYWdlcy9TUElERVJNQU4uanBnIiwiaWF0IjoxNzQyNDc3NDg5LCJleHAiOjE5MDAxNTc0ODl9.S86chDOZJtwOf-DC98jSnkMYzQbu76CksIWpRaN3Zgg"
+																alt="image description"></a>
+																<!-- <span class="caption">
+																	<span class="best-price">Best Price</span>
+																</span> -->
+													</div>
+												</div>
+											</div>
+										</div><!-- mt product1 center end here -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main><!-- mt main end here -->
+			<!-- footer of the Page -->
+			<footer id="mt-footer" class="style1 wow fadeInUp" data-wow-delay="0.4s">
+				<!-- Footer Holder of the Page -->
+				<div class="footer-holder dark">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-3 mt-paddingbottomsm">
+								<!-- F Widget About of the Page -->
+								<div class="f-widget-about">
+									<div class="logo">
+										<a href="#"><img src="images/LOGO4.png" alt="PookieTrends"></a>
+									</div>
+									<p><strong style="color:black;">Funky Fits, Wild T-Shirt Hits.</strong></p>
+									<!-- Social Network of the Page -->
+									<ul class="list-unstyled social-network">
+										<li><a href="https://www.instagram.com/trendpookie?igsh=MTFmajI1b3Fuajk0Mw=="><i
+													class="fa fa-instagram"></i></a></li>
+										
+									</ul>
+									<!-- Social Network of the Page end -->
+								</div>
+								<!-- F Widget About of the Page end -->
+							</div>
+							<!-- <div class="col-xs-12 col-sm-6 col-md-3 mt-paddingbottomsm">
+								<div class="f-widget-news">
+									<h3 class="f-widget-heading">Twitter</h3>
+									<div class="news-articles">
+										<div class="news-column">
+											<i class="fa fa-twitter"></i>
+											<div class="txt-box">
+												<p>Laboris nisi ut <a href="#">#schön</a> aliquip econse- <br>quat. <a
+														href="#">https://t.co/vreNJ9nEDt</a></p>
+											</div>
+										</div>
+										<div class="news-column">
+											<i class="fa fa-twitter"></i>
+											<div class="txt-box">
+												<p>Ficia deserunt mollit anim id est labo- <br>rum. incididunt ut labore
+													et dolore <br><a href="#">https://t.co/vreNJ9nEDt</a></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div> -->
+							<div class="col-xs-12 col-sm-6 col-md-3 mt-paddingbottomxs">
+								<!-- Footer Tabs of the Page -->
+								<div class="f-widget-tabs">
+									<h3 class="f-widget-heading">Product Tags</h3>
+									<ul class="list-unstyled tabs">
+										<li><a href="#">Oversize T-Shirts</a></li>
+										<li><a href="#">SuperHero T-Shirts</a></li>
+								</div>
+								<!-- Footer Tabs of the Page -->
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-3 text-right">
+								<!-- F Widget About of the Page -->
+								<div class="f-widget-about">
+									<h3 class="f-widget-heading">Information</h3>
+									<ul class="list-unstyled address-list align-right">
+										<!-- <li><i class="fa fa-map-marker"></i>
+											<address>Connaugt Road Central Suite 18B, 148 <br>New Yankee</address>
+										</li>
+										<li><i class="fa fa-phone"></i><a href="tel:15553332211">+1 (555) 333 22 11</a> -->
+										</li>
+										<li><i class="fa fa-envelope-o"></i><a
+												href="mailto:trendpookie@gmail.com">trendpookie@gmail.com
+											</a>
+									</ul>
+								</div>
+								<!-- F Widget About of the Page end -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Footer Holder of the Page end -->
+				<!-- Footer Area of the Page -->
+				<div class="footer-area">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12 col-sm-6">
+								<p>© <a href="#" style="color:white;">PookieTrend</a> - All rights Reserved</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Footer Area of the Page end -->
+			</footer><!-- footer of the Page end -->
+		</div><!-- W1 end here -->
+		<span id="back-top" class="fa fa-arrow-up"></span>
+	</div>
+	<!-- <a id="newsletter-hiddenlink" href="#popup2" class="lightbox" style="display: none;">NEWSLETTER</a> -->
+	<!-- Popup Holder of the Page -->
+	<!-- include jQuery -->
+	<script src="js/jquery.js"></script>
+	<!-- include jQuery -->
+	<script src="js/plugins.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
+	<!-- include jQuery -->
+	<script src="js/jquery.main.js"></script>
+	<script src="js/icon-handbag.js"></script>
+</body>
+
+<!-- Mirrored from htmlbeans.com/html/schon/homepage1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 16 Apr 2023 13:55:58 GMT -->
+
+</html>

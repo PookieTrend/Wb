@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from htmlbeans.com/html/schon/order-checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 16 Apr 2023 13:56:44 GMT -->
+
+<head>
+    <!-- set the encoding of your site -->
+    <meta charset="utf-8">
+    <!-- set the viewport width and initial-scale on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PookieTrend | Order Checkout</title>
+    <!-- include the site stylesheet -->
+    <link
+        href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900,900italic%7cMontserrat:400,700%7cOxygen:400,300,700'
+        rel='stylesheet' type='text/css'>
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="css/icon-fonts.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- include the site stylesheet -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .mt-bottom-bar {
+            background-color: black;
+        }
+
+        .price,
+        a {
+            color: white !important;
+        }
+
+        .btn-cart {
+            background: #C71585;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: black;
+            transition: all 0.3s;
+        }
+
+        .btn-cart:hover {
+            background: #ff1493;
+            box-shadow: 0 0 10px #ff1493;
+        }
+
+        .checkout-section {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .success-message a {
+            color: #C71585;
+            text-decoration: none;
+        }
+
+        .success-message a:hover {
+            text-decoration: underline;
+        }
+
+        .success-message {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #1e1e1e;
+            box-shadow: 0 4px 8px rgba(255, 20, 147, 0.3);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .message-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .track-btn {
+            background-color: #C71585;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .track-btn:hover {
+            background-color: #ff1493;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+
+
+        @media (max-width: 768px) {
+
+            .mt-process-sec .process-list li:before {
+                display: none !important;
+            }
+
+            .success-message {
+                padding: 15px;
+            }
+
+            .track-btn {
+                font-size: 16px;
+                padding: 10px 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .mt-process-sec .process-list li:before {
+                display: none !important;
+            }
+
+            .success-message {
+                padding: 15px;
+            }
+
+            .track-btn {
+                font-size: 16px;
+                padding: 10px 18px;
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        function adjustText() {
+            const centeredText = document.getElementById('Log');
+            if (window.innerWidth <= 768) { // Mobile View
+                centeredText.style.left = "50%";
+                centeredText.style.marginTop = "4px";
+            }
+        }
+        window.addEventListener('resize', adjustText);
+        window.addEventListener('DOMContentLoaded', adjustText);
+    </script>
+</head>
+
+<body>
+    <!-- main container of all the page elements -->
+    <div id="wrapper">
+        <!-- Page Loader -->
+        <div id="pre-loader" class="loader-container">
+            <div class="loader">
+                <img src="images/svg/rings.svg" alt="loader">
+            </div>
+        </div>
+        <div class="w1">
+            <!-- mt -header style14 start from here -->
+            <header class="style14" id="mt-header">
+                <!-- mt top bar start from here -->
+                <div class="mt-top-bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 hidden-xs">
+                            </div>
+                            <div class="col-xs-12 col-sm-6 text-right">
+                                <!-- mt top lang start from here -->
+                                <div class="mt-top-lang">
+                                </div>
+                                <!-- mt top lang end from here -->
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- mt top bar end here -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- mt bottom bar start from here -->
+                            <div class="mt-bottom-bar">
+                                <!-- mt logo start from here -->
+                                <div class="mt-logo"><a href="#"><img alt="schon" src="images/LOGO7.png"></a></div>
+                                <div id="Log"
+                                    style="position: absolute; left: 14%; transform: translateX(-50%); z-index: 1; margin-top: 9px;">
+                                    <span style="color: black; font-size: 24px; font-weight: bold;">Pookie Trend</span>
+                                </div>
+                                <!-- mt icon list start from here -->
+                                <ul class="mt-icon-list">
+                                    <li><a id="view-cart" class="icon-handbag" href="#"
+                                            style="color: black !important;"></a></li>
+                                    <!-- mt drop start here -->
+                                    <div class="mt-drop">
+                                        <!-- mt drop sub start here -->
+                                        <div class="mt-drop-sub">
+                                            <!-- mt side widget start here -->
+                                            <div class="mt-side-widget">
+                                                <!-- cart row start here -->
+                                                <div class="cart-row">
+                                                    <a href="#" class="img"><img src="images/img33.jpg" alt="image"
+                                                            class="img-responsive"></a>
+                                                    <div class="mt-h">
+                                                        <span class="mt-h-title"><a href="#">Marvelous Modern 3
+                                                                Seater</a></span>
+                                                        <span class="price"><i class="fa fa-rupee"
+                                                                aria-hidden="true"></i> 599,00</span>
+                                                        <span class="mt-h-title">Qty: 1</span>
+                                                    </div>
+                                                    <a href="#" class="close fa fa-times"></a>
+                                                </div><!-- cart row end here -->
+                                                <!-- cart row start here -->
+                                                <div class="cart-row">
+                                                    <a href="#" class="img"><img src="images/img34.jpg" alt="image"
+                                                            class="img-responsive"></a>
+                                                    <div class="mt-h">
+                                                        <span class="mt-h-title"><a href="#">Marvelous Modern 3
+                                                                Seater</a></span>
+                                                        <span class="price"><i class="fa fa-rupee"
+                                                                aria-hidden="true"></i> 599,00</span>
+                                                        <span class="mt-h-title">Qty: 1</span>
+                                                    </div>
+                                                    <a href="#" class="close fa fa-times"></a>
+                                                </div><!-- cart row end here -->
+                                                <!-- cart row start here -->
+                                                <div class="cart-row">
+                                                    <a href="#" class="img"><img src="images/img35.jpg" alt="image"
+                                                            class="img-responsive"></a>
+                                                    <div class="mt-h">
+                                                        <span class="mt-h-title"><a href="#">Marvelous Modern 3
+                                                                Seater</a></span>
+                                                        <span class="price"><i class="fa fa-rupee"
+                                                                aria-hidden="true"></i> 599,00</span>
+                                                        <span class="mt-h-title">Qty: 1</span>
+                                                    </div>
+                                                    <a href="#" class="close fa fa-times"></a>
+                                                </div><!-- cart row end here -->
+                                                <!-- cart row total start here -->
+                                                <div class="cart-row-total">
+                                                    <span class="mt-total">Sub Total</span>
+                                                    <span class="mt-total-txt"><i class="fa fa-rupee"
+                                                            aria-hidden="true"></i> 799,00</span>
+                                                </div>
+                                                <!-- cart row total end here -->
+                                                <div class="cart-btn-row">
+                                                    <a href="#" class="btn-type2">VIEW CART</a>
+                                                    <a href="#" class="btn-type3">CHECKOUT</a>
+                                                </div>
+                                            </div>
+                                            <!-- mt side widget end here -->
+                                        </div>
+                                        <!-- mt drop sub end here -->
+                                    </div><!-- mt drop end here -->
+                                    <span class="mt-mdropover"></span>
+                                    </li>
+                                    <li class="hidden-md hidden-lg">
+                                        <a href="#" class="bar-opener big mobile-toggle">
+                                            <span class="bar"></span>
+                                            <span class="bar small"></span>
+                                            <span class="bar"></span>
+                                        </a>
+                                    </li>
+                                </ul><!-- mt icon list end here -->
+                                <!-- navigation start here -->
+                                <nav id="nav">
+                                    <ul>
+                                        <li>
+                                            <a href="index.html" style="color: black !important;">HOME <i
+                                                    class="fa fa-angle-down hidden-lg hidden-md"
+                                                    aria-hidden="true"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="product.html" style="color:black !important" ;>PRODUCTS <i
+                                                    class="fa fa-angle-down hidden-lg hidden-md"
+                                                    aria-hidden="true"></i></a>
+                                        </li>
+                                        <li><a href="about-us.html" style="color:black !important" ;>About</a></li>
+                                        <li>
+                                            <a href="contact-us.html" style="color:black !important" ;>Contact <i
+                                                    class="fa fa-angle-down hidden-lg hidden-md"
+                                                    aria-hidden="true"></i></a>
+                            </div>
+                            </li>
+                            </ul>
+                            </nav><!-- navigation end here -->
+                        </div><!-- mt bottom bar end here -->
+                    </div>
+                </div>
+        </div>
+        <span class="mt-side-over"></span>
+        </header><!-- mt -header style14 end here -->
+        <!-- mt search popup start here -->
+        <!-- <div class="mt-search-popup">
+      <div class="mt-holder">
+        <a href="#" class="search-close"><span></span><span></span></a>
+        <div class="mt-frame">
+          <form action="#">
+            <fieldset>
+              <input type="text" placeholder="Search...">
+              <span class="icon-microphone"></span>
+              <button class="icon-magnifier" type="submit"></button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>mt search popup end here -->
+        <!-- Main of the Page -->
+        <main id="mt-main">
+            <section class="mt-contact-banner mt-banner-22" style="background-image: url(images/img-76.jpg);">
+                <div class="container">
+                </div>
+            </section>
+            <!-- Mt Process Section of the Page end -->
+            <!-- Mt Detail Section of the Page -->
+            <br>
+            <section class="mt-detail-sec toppadding-zero">
+                <div class="container">
+                    <div class="row">
+                        <div class="success-message" id="success-message">
+                            <div class="message-container">
+                                <i class="fa fa-check-circle"
+                                    style="font-size: 50px; color: #4CAF50; margin-bottom: 15px;"></i>
+                                <h2 style="color: #4CAF50; font-weight: bold;">Congratulations! Your Order is Placed
+                                </h2>
+                                <p style="text-align: center; font-size: 18px;">
+                                    Thank you for shopping with <strong>Pookie Trend</strong>. Your order will be
+                                    delivered soon.
+                                </p>
+                                <p style="text-align: center; font-size: 18px; color: #ff9800;">
+                                    <i class="fa fa-truck"></i> Estimated Delivery: 5-7 Days
+                                </p>
+                                <p class="order-t"></p>
+                                <button class="btn track-btn" onclick="window.location.href='ordertracking.html'">
+                                    <i class="fa fa-map-marker"></i> TRACK HERE
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <!-- Mt Detail Section of the Page end -->
+        </main><!-- Main of the Page end here -->
+        <!-- footer of the Page -->
+        <footer id="mt-footer" class="style4">
+            <div class="footer-holder">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-4 mt-paddingbottomsm">
+                            <!-- F Widget About of the Page -->
+                            <div class="f-widget-about">
+                                <div class="logo">
+                                    <a href="#"><img src="images/LOGO4.png" alt="PookieTrend"></a>
+                                </div>
+                                <p><strong style="color:black;">Funky Fits, Wild T-Shirt Hits.</strong></p>
+                                <ul class="list-unstyled address-list">
+                                    <!-- <li><i class="fa fa-map-marker"></i>
+                    <address>Connaugt Road Central Suite 18B, 148 <br>New Yankee</address>
+                  </li> -->
+                                    <!-- <li><i class="fa fa-phone"></i><a href="tel:15553332211" style="color: #a0a0a0 !important;">+1 (555)
+                      333 22 11</a></li> -->
+                                    <li><i class="fa fa-envelope-o"></i><a
+                                            href="mailto:&#112;&#111;&#111;&#107;&#105;&#101;&#116;&#114;&#101;&#110;&#100;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;"
+                                            style="color: #a0a0a0 !important;">&#112;&#111;&#111;&#107;&#105;&#101;&#116;&#114;&#101;&#110;&#100;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- F Widget About of the Page end -->
+                        </div>
+                        <nav class="col-xs-12 col-sm-8 col-md-5 mt-paddingbottomsm">
+                            <!-- Footer Nav of the Page -->
+                            <div class="nav-widget-1">
+                                <h3 class="f-widget-heading">Categories</h3>
+                                <ul class="list-unstyled f-widget-nav">
+                                    <li><a href="OVERSIZED_PRODUCTS.html"
+                                            style="color: #a0a0a0 !important;">Oversized</a></li>
+                                    <li><a href="SUPERHERO_PRODUCTS.html"
+                                            style="color: #a0a0a0 !important;">SuperHero</a></li>
+                                </ul>
+                            </div>
+                            <!-- Footer Nav of the Page end -->
+                            <!-- Footer Nav of the Page -->
+                            <div class="nav-widget-1">
+                                <h3 class="f-widget-heading">Information</h3>
+                                <ul class="list-unstyled f-widget-nav">
+                                    <li><a href="about-us.html" style="color: #a0a0a0 !important;">About Us</a></li>
+                                    <li><a href="contact-us.html" style="color: #a0a0a0 !important;">Contact Us</a></li>
+                                </ul>
+                            </div>
+                            <!-- Footer Nav of the Page end -->
+                            <!-- Footer Nav of the Page -->
+                            <div class="nav-widget-1">
+                                <h3 class="f-widget-heading">Account</h3>
+                                <ul class="list-unstyled f-widget-nav">
+                                    <li><a href="ordertracking.html" style="color: #a0a0a0 !important;">Order
+                                            Tracking</a></li>
+                                    <li><a href="order-shopping-cart.html" style="color: #a0a0a0 !important;">Shopping
+                                            Cart</a></li>
+                                    <li><a href="order-checkout.html" style="color: #a0a0a0 !important;">Checkout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Footer Nav of the Page end -->
+                        </nav>
+                        <div class="col-xs-12 col-md-3 text-right hidden-sm">
+                            <!-- F Widget Newsletter of the Page -->
+                            <div class="f-widget-newsletter">
+                                <h3 class="f-widget-heading" style="color: black !important;">Follow Us</h3>
+                                <!-- Social Network of the Page -->
+                                <ul class="list-unstyled social-network">
+                                    <li><a href="https://www.instagram.com/trendpookie?igsh=MTFmajI1b3Fuajk0Mw=="><i
+                                                class="fa fa-instagram" style="color: #a0a0a0 !important;"></i></a></li>
+                                </ul>
+                                <!-- Social Network of the Page end -->
+                            </div>
+                            <!-- F Widget Newsletter of the Page end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Area of the Page -->
+            <div class="footer-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <p>© <a href="index.html" style="color: white;">PookieTrend.</a> - All rights Reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Area of the Page end -->
+        </footer>
+        <!-- footer of the Page end -->
+    </div>
+    <span id="back-top" class="fa fa-arrow-up"></span>
+    </div>
+    <!-- include jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- include jQuery -->
+    <script src="js/plugins.js"></script>
+    <!-- include jQuery -->
+    <script src="js/jquery.main.js"></script>
+    <script src="js/icon-handbag.js"></script>
+    <script src="js/order-complete.js"></script>
+</body>
+
+<!-- Mirrored from htmlbeans.com/html/schon/order-checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 16 Apr 2023 13:56:44 GMT -->
+
+</html>

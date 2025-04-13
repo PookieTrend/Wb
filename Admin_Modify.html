@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Products</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            padding: 40px;
+            max-width: 1250px;
+            margin: auto;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            text-align: center;
+            color: #f0a500;
+            margin-bottom: 30px;
+            text-shadow: 0 0 5px #f0a500;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            color: #e0e0e0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+
+        th {
+            background-color: #333;
+            color: #f0a500;
+        }
+
+        tr:hover {
+            background-color: #252525;
+        }
+
+        /* Styled Buttons for Dynamic Elements */
+
+        .btn-update:hover {
+            background-color: #ffcc00;
+            color: #1e1e1e;
+            box-shadow: 0 0 8px #ffcc00;
+            transform: scale(1.05);
+        }
+
+        .btn-delete:hover {
+            background-color: #c9302c;
+            box-shadow: 0 0 8px #c9302c;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Modify Products</h1>
+        <table id="products-table">
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                    <th>Product Description</th>
+                    <th>Product Image</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic rows will be added here by admin-modify.js -->
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/admin-modify.js"></script>
+</body>
+</html>

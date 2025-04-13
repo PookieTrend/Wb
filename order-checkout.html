@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from htmlbeans.com/html/schon/order-checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 16 Apr 2023 13:56:44 GMT -->
+
+<head>
+  <!-- set the encoding of your site -->
+  <meta charset="utf-8">
+  <!-- set the viewport width and initial-scale on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PookieTrend | Order Checkout</title>
+  <!-- include the site stylesheet -->
+  <link
+    href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900,900italic%7cMontserrat:400,700%7cOxygen:400,300,700'
+    rel='stylesheet' type='text/css'>
+  <!-- include the site stylesheet -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <!-- include the site stylesheet -->
+  <link rel="stylesheet" href="css/animate.css">
+  <!-- include the site stylesheet -->
+  <link rel="stylesheet" href="css/icon-fonts.css">
+  <!-- include the site stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- include the site stylesheet -->
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+
+    .mt-bottom-bar {
+      background-color: black;
+    }
+
+    .price,
+    a {
+      color: white !important;
+    }
+
+    .btn-cart {
+      background: #C71585;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: black;
+      transition: all 0.3s;
+    }
+
+    .btn-cart:hover {
+      background: #ff1493;
+      box-shadow: 0 0 10px #ff1493;
+    }
+
+    .checkout-section {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 768px) {
+
+      .mt-process-sec .process-list li:before {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .mt-process-sec .process-list li:before {
+        display: none !important;
+      }
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+		function adjustText() {
+			const centeredText = document.getElementById('Log');
+			if (window.innerWidth <= 768) { // Mobile View
+				centeredText.style.left = "50%";
+        centeredText.style.marginTop = "4px";
+			}
+		}
+		window.addEventListener('resize', adjustText);
+		window.addEventListener('DOMContentLoaded', adjustText);
+	</script>
+</head>
+
+<body>
+  <!-- main container of all the page elements -->
+  <div id="wrapper">
+    <!-- Page Loader -->
+    <div id="pre-loader" class="loader-container">
+      <div class="loader">
+        <img src="images/svg/rings.svg" alt="loader">
+      </div>
+    </div>
+    <div class="w1">
+      <!-- mt -header style14 start from here -->
+      <header class="style14" id="mt-header">
+        <!-- mt top bar start from here -->
+        <div class="mt-top-bar">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 hidden-xs">
+              </div>
+              <div class="col-xs-12 col-sm-6 text-right">
+                <!-- mt top lang start from here -->
+                <div class="mt-top-lang">
+                </div>
+                <!-- mt top lang end from here -->
+              </div>
+            </div>
+          </div>
+        </div><!-- mt top bar end here -->
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <!-- mt bottom bar start from here -->
+              <div class="mt-bottom-bar">
+                <!-- mt logo start from here -->
+                <div class="mt-logo"><a href="#"><img alt="schon" src="images/LOGO7.png"></a></div>
+                <div id="Log" style="position: absolute; left: 14%; transform: translateX(-50%); z-index: 1; margin-top: 9px;">
+									<span style="color: black; font-size: 24px; font-weight: bold;">Pookie Trend</span>
+								</div>
+                <!-- mt icon list start from here -->
+                <ul class="mt-icon-list">
+                  <li><a id="view-cart" class="icon-handbag" href="#" style="color: black !important;"></a></li>
+                  <!-- mt drop start here -->
+                  <div class="mt-drop">
+                    <!-- mt drop sub start here -->
+                    <div class="mt-drop-sub">
+                      <!-- mt side widget start here -->
+                      <div class="mt-side-widget">
+                        <!-- cart row start here -->
+                        <div class="cart-row">
+                          <a href="#" class="img"><img src="images/img33.jpg" alt="image" class="img-responsive"></a>
+                          <div class="mt-h">
+                            <span class="mt-h-title"><a href="#">Marvelous Modern 3 Seater</a></span>
+                            <span class="price"><i class="fa fa-rupee" aria-hidden="true"></i> 599,00</span>
+                            <span class="mt-h-title">Qty: 1</span>
+                          </div>
+                          <a href="#" class="close fa fa-times"></a>
+                        </div><!-- cart row end here -->
+                        <!-- cart row start here -->
+                        <div class="cart-row">
+                          <a href="#" class="img"><img src="images/img34.jpg" alt="image" class="img-responsive"></a>
+                          <div class="mt-h">
+                            <span class="mt-h-title"><a href="#">Marvelous Modern 3 Seater</a></span>
+                            <span class="price"><i class="fa fa-rupee" aria-hidden="true"></i> 599,00</span>
+                            <span class="mt-h-title">Qty: 1</span>
+                          </div>
+                          <a href="#" class="close fa fa-times"></a>
+                        </div><!-- cart row end here -->
+                        <!-- cart row start here -->
+                        <div class="cart-row">
+                          <a href="#" class="img"><img src="images/img35.jpg" alt="image" class="img-responsive"></a>
+                          <div class="mt-h">
+                            <span class="mt-h-title"><a href="#">Marvelous Modern 3 Seater</a></span>
+                            <span class="price"><i class="fa fa-rupee" aria-hidden="true"></i> 599,00</span>
+                            <span class="mt-h-title">Qty: 1</span>
+                          </div>
+                          <a href="#" class="close fa fa-times"></a>
+                        </div><!-- cart row end here -->
+                        <!-- cart row total start here -->
+                        <div class="cart-row-total">
+                          <span class="mt-total">Sub Total</span>
+                          <span class="mt-total-txt"><i class="fa fa-rupee" aria-hidden="true"></i> 799,00</span>
+                        </div>
+                        <!-- cart row total end here -->
+                        <div class="cart-btn-row">
+                          <a href="#" class="btn-type2">VIEW CART</a>
+                          <a href="#" class="btn-type3">CHECKOUT</a>
+                        </div>
+                      </div>
+                      <!-- mt side widget end here -->
+                    </div>
+                    <!-- mt drop sub end here -->
+                  </div><!-- mt drop end here -->
+                  <span class="mt-mdropover"></span>
+                  </li>
+                  <li class="hidden-md hidden-lg">
+                    <a href="#" class="bar-opener big mobile-toggle">
+                      <span class="bar"></span>
+                      <span class="bar small"></span>
+                      <span class="bar"></span>
+                    </a>
+                  </li>
+                </ul><!-- mt icon list end here -->
+                <!-- navigation start here -->
+                <nav id="nav">
+                  <ul>
+                    <li>
+                      <a href="index.html" style="color: black !important;">HOME <i
+                          class="fa fa-angle-down hidden-lg hidden-md" aria-hidden="true"></i></a>
+                    </li>
+                    <li>
+                      <a href="product.html" style="color:black !important" ;>PRODUCTS <i
+                          class="fa fa-angle-down hidden-lg hidden-md" aria-hidden="true"></i></a>
+                    </li>
+                    <li><a href="about-us.html" style="color:black !important" ;>About</a></li>
+                    <li>
+                      <a href="contact-us.html" style="color:black !important" ;>Contact <i
+                          class="fa fa-angle-down hidden-lg hidden-md" aria-hidden="true"></i></a>
+              </div>
+              </li>
+              </ul>
+              </nav><!-- navigation end here -->
+            </div><!-- mt bottom bar end here -->
+          </div>
+        </div>
+    </div>
+    <span class="mt-side-over"></span>
+    </header><!-- mt -header style14 end here -->
+    <!-- mt search popup start here -->
+    <!-- <div class="mt-search-popup">
+      <div class="mt-holder">
+        <a href="#" class="search-close"><span></span><span></span></a>
+        <div class="mt-frame">
+          <form action="#">
+            <fieldset>
+              <input type="text" placeholder="Search...">
+              <span class="icon-microphone"></span>
+              <button class="icon-magnifier" type="submit"></button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>mt search popup end here -->
+    <!-- Main of the Page -->
+    <main id="mt-main">
+      <section class="mt-contact-banner mt-banner-22" style="background-image: url(images/img-76.jpg);">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <h1 class="text-center">CHECK OUT</h1>
+              <!-- Breadcrumbs of the Page -->
+              <nav class="breadcrumbs">
+                <ul class="list-unstyled">
+                  <li><a href="index.html">Home <i class="fa fa-angle-right"></i></a></li>
+                  <li>Check Out</li>
+                </ul>
+              </nav>
+              <!-- Breadcrumbs of the Page end -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Mt Process Section of the Page -->
+      <div class="mt-process-sec">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <!-- Process List of the Page -->
+              <ul class="list-unstyled process-list">
+                <li class="active">
+                  <span class="counter" style="color: grey !important; border-color: grey;">01</span>
+                  <strong class="title" style="color:grey !important">Shopping Cart</strong>
+                </li>
+                <li class="active">
+                  <span class="counter" style="color: white !important; border-color: white;">02</span>
+                  <strong class="title" style="color:white !important;">Check Out</strong>
+                </li>
+                <li>
+                  <span class="counter" style="color: grey !important; border-color: grey;">03</span>
+                  <strong class="title" style="color:grey !important">Order Complete</strong>
+                </li>
+              </ul>
+              <!-- Process List of the Page end -->
+            </div>
+          </div>
+        </div>
+      </div><!-- Mt Process Section of the Page end -->
+      <!-- Mt Detail Section of the Page -->
+      <section class="mt-detail-sec toppadding-zero">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <h2 style="color: white !important;">BILLING DETAILS</h2>
+              <!-- Bill Detail of the Page -->
+              <form action="#" id="billing-form" class="bill-detail">
+                <fieldset>
+                  <div class="form-group">
+                    <div class="col">
+                      <input type="text" id="billing-name" class="form-control" placeholder="First Name">
+                    </div>
+                    <div class="col">
+                      <input type="text" id="billing-lastname" class="form-control" placeholder="Last Name">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <textarea id="billing-address" class="form-control" placeholder="Address"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" id="billing-city" class="form-control" placeholder="Town / City">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" id="billing-state" class="form-control" placeholder="State">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" id="billing-pincode" class="form-control" placeholder="Pincode">
+                  </div>
+                  <div class="form-group">
+                    <div class="col">
+                      <input type="email" id="billing-email" class="form-control" placeholder="Email Address">
+                    </div>
+                    <div class="col">
+                      <input type="tel" id="billing-phone" class="form-control" placeholder="Phone Number">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <select id="billing-size" class="form-control">
+                      <option value="" disabled selected>Select Size</option>
+                      <option value="S">Small (S)</option>
+                      <option value="M">Medium (M)</option>
+                      <option value="L">Large (L)</option>
+                      <option value="XL">Extra Large (XL)</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <textarea id="billing-notes" class="form-control" placeholder="Order Notes"></textarea>
+                  </div>
+                  
+                </fieldset>
+              </form>
+              <!-- Bill Detail of the Page end -->
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <div class="holder">
+                <h2>YOUR ORDER</h2>
+                <ul class="list-unstyled block">
+                  <li>
+                    <div class="txt-holder">
+                      <div class="text-wrap pull-left">
+                        <strong class="title">PRODUCTS</strong>
+                        <span>Marvelous Modern 3 Seater x1</span>
+                        <span>Bombi Chair x1</span>
+                      </div>
+                      <div class="text-wrap txt text-right pull-right">
+                        <strong class="title">TOTALS</strong>
+                        <span><i class="fa fa-rupee"></i> 299,00</span>
+                        <span><i class="fa fa-rupee"></i> 532,00</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="txt-holder">
+                      <strong class="title sub-title pull-left">CART SUBTOTAL</strong>
+                      <div class="txt pull-right">
+                        <span><i class="fa fa-rupee"></i> 532,00</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="txt-holder">
+                      <strong class="title sub-title pull-left">SHIPPING</strong>
+                      <div class="txt pull-right">
+                        <span>Free Shipping</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li style="border-bottom: none;">
+                    <div class="txt-holder">
+                      <strong class="title sub-title pull-left">ORDER TOTAL</strong>
+                      <div class="txt pull-right">
+                        <span><i class="fa fa-rupee"></i> 1299,00</span>
+                      </div>
+                    </div>
+                  </li>
+                  <a style="color:black !important";>Currently we are accepting only CASH ON DELIVERY mode of payment</a>
+                </ul>
+                <a class="process-btn">PROCEED TO PAYMENT <i class="fa fa-check"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Mt Detail Section of the Page end -->
+    </main><!-- Main of the Page end here -->
+    <!-- footer of the Page -->
+    <footer id="mt-footer" class="style4">
+      <div class="footer-holder">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-4 mt-paddingbottomsm">
+              <!-- F Widget About of the Page -->
+              <div class="f-widget-about">
+                <div class="logo">
+                  <a href="#"><img src="images/LOGO4.png" alt="PookieTrend"></a>
+                </div>
+                <p><strong style="color:black;">Funky Fits, Wild T-Shirt Hits.</strong></p>
+                <ul class="list-unstyled address-list">
+                  <!-- <li><i class="fa fa-map-marker"></i>
+                    <address>Connaugt Road Central Suite 18B, 148 <br>New Yankee</address>
+                  </li> -->
+                  <!-- <li><i class="fa fa-phone"></i><a href="tel:15553332211" style="color: #a0a0a0 !important;">+1 (555)
+                      333 22 11</a></li> -->
+                  <li><i class="fa fa-envelope-o"></i><a
+                      href="mailto:&#112;&#111;&#111;&#107;&#105;&#101;&#116;&#114;&#101;&#110;&#100;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;"
+                      style="color: #a0a0a0 !important;">&#112;&#111;&#111;&#107;&#105;&#101;&#116;&#114;&#101;&#110;&#100;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- F Widget About of the Page end -->
+            </div>
+            <nav class="col-xs-12 col-sm-8 col-md-5 mt-paddingbottomsm">
+              <!-- Footer Nav of the Page -->
+              <div class="nav-widget-1">
+                <h3 class="f-widget-heading">Categories</h3>
+                <ul class="list-unstyled f-widget-nav">
+                  <li><a href="OVERSIZED_PRODUCTS.html" style="color: #a0a0a0 !important;">Oversized</a></li>
+                  <li><a href="SUPERHERO_PRODUCTS.html" style="color: #a0a0a0 !important;">SuperHero</a></li>
+                </ul>
+              </div>
+              <!-- Footer Nav of the Page end -->
+              <!-- Footer Nav of the Page -->
+              <div class="nav-widget-1">
+                <h3 class="f-widget-heading">Information</h3>
+                <ul class="list-unstyled f-widget-nav">
+                  <li><a href="about-us.html" style="color: #a0a0a0 !important;">About Us</a></li>
+                  <li><a href="contact-us.html" style="color: #a0a0a0 !important;">Contact Us</a></li>
+                </ul>
+              </div>
+              <!-- Footer Nav of the Page end -->
+              <!-- Footer Nav of the Page -->
+              <div class="nav-widget-1">
+                <h3 class="f-widget-heading">Account</h3>
+                <ul class="list-unstyled f-widget-nav">
+                  <li><a href="ordertracking.html" style="color: #a0a0a0 !important;">Order Tracking</a></li>
+                  <li><a href="order-shopping-cart.html" style="color: #a0a0a0 !important;">Shopping Cart</a></li>
+                  <li><a href="order-checkout.html" style="color: #a0a0a0 !important;">Checkout</a></li>
+                </ul>
+              </div>
+              <!-- Footer Nav of the Page end -->
+            </nav>
+            <div class="col-xs-12 col-md-3 text-right hidden-sm">
+              <!-- F Widget Newsletter of the Page -->
+              <div class="f-widget-newsletter">
+                <h3 class="f-widget-heading" style="color: black !important;">Follow Us</h3>
+                <!-- Social Network of the Page -->
+                <ul class="list-unstyled social-network">
+                  <li><a href="https://www.instagram.com/trendpookie?igsh=MTFmajI1b3Fuajk0Mw=="><i class="fa fa-instagram" style="color: #a0a0a0 !important;"></i></a></li>
+                </ul>
+                <!-- Social Network of the Page end -->
+              </div>
+              <!-- F Widget Newsletter of the Page end -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer Area of the Page -->
+      <div class="footer-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <p>© <a href="index.html" style="color: white;">PookieTrend.</a> - All rights Reserved</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer Area of the Page end -->
+    </footer>
+    <!-- footer of the Page end -->
+  </div>
+  <span id="back-top" class="fa fa-arrow-up"></span>
+  </div>
+  <!-- include jQuery -->
+  <script src="js/jquery.js"></script>
+  <!-- include jQuery -->
+  <script src="js/plugins.js"></script>
+  <!-- include jQuery -->
+  <script src="js/jquery.main.js"></script>
+  <script src="js/billing_details.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/icon-handbag.js"></script>
+
+  <!-- Black-themed Add to Cart Notification -->
+  <div id="cart-popup" style="
+		position: fixed;
+		bottom: 20px;
+		right: 20px;
+		background-color: white;
+		color: black;
+		padding: 15px 20px;
+		border-radius: 5px;
+		font-size: 16px;
+		display: none;
+		z-index: 9999;">
+    Item added to cart!
+  </div>
+</body>
+
+<!-- Mirrored from htmlbeans.com/html/schon/order-checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 16 Apr 2023 13:56:44 GMT -->
+
+</html>

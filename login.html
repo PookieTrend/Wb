@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pookie Trend | Login</title>
+    <meta name="description" content="Login - Register Template">
+    <meta name="author" content="Lorenzo Angelino aka MrLolok">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/login-register.css">
+    <style>
+        body {
+            background-image: url("images/Login-Background2.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            overflow: hidden;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <div id="container-login">
+        <div id="title">
+            <i class="material-icons lock">lock</i> Login
+        </div>
+
+        <!-- Error Message Box -->
+        <div id="errorAlert" class="error-alert" style="display: none;">
+            <span id="errorMessage"></span>
+            <button class="close-btn" id="error-close-btn">✖</button>
+        </div>
+
+
+        <form>
+            <div class="input">
+                <div class="input-addon">
+                    <i class="material-icons">face</i>
+                </div>
+                <input id="username" placeholder="Username" type="text" required class="validate" autocomplete="off">
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="input">
+                <div class="input-addon">
+                    <i class="material-icons">vpn_key</i>
+                </div>
+                <input id="password" placeholder="Password" type="password" required class="validate"
+                    autocomplete="off">
+            </div>
+
+            <div class="remember-me">
+                <input type="checkbox">
+                <span style="color: #DDD">Remember Me</span>
+            </div>
+
+            <input type="submit" value="Log In" id="login-btn" />
+        </form>
+
+        <div class="forgot-password">
+            <a href="#">Forgot your password?</a>
+        </div>
+        <div class="privacy">
+            <a href="#">Privacy Policy</a>
+        </div>
+
+        <div class="register">
+            Don't have an account yet?
+            <a href="register.html"><button id="register-link">Register here</button></a>
+        </div>
+    </div>
+    <div id="welcome-popup">
+        <div id="welcome-content">
+            <div class="logo-container">
+                <img src="images/LOGO4.png" alt="FashionVerse Logo" class="website-logo">
+            </div>
+            <h2>Pookie Trend.</h2>
+            <p>Funky Fits, Wild T-Shirt Hits.</p>
+            <div class="image-gallery">
+                <img src="images/FashionImage3.jpeg" alt="Trendy T-Shirts" class="popup-image">
+                <img src="images/FashionImage4.jpg" alt="Luxury Fashion" class="popup-image inactivef">
+            </div>
+            <button id="close-popup">Continue</button>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Popup -->
+    <div id="privacy-popup" style="display: none;">
+        <div id="privacy-content" style="
+        background: rgba(0, 0, 0, 0.95);
+        padding: 30px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 600px;
+        margin: 0 auto;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        overflow-y: auto;
+        max-height: 80vh;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        text-align: center; /* Center text alignment */
+    ">
+            <h2 style="color: #C71585;">Privacy Policy</h2>
+            <p>We value your privacy and are dedicated to safeguarding your personal information. Please review the
+                following policies:</p>
+            <ul style="text-align: left;">
+                <li><strong>Information Collection:</strong> We collect details like username, email, and password for
+                    account creation and management.</li>
+                <li><strong>Data Usage:</strong> Your information is used to enhance your experience. We do not share
+                    your data with third parties without consent.</li>
+                <li><strong>Security Measures:</strong> Robust measures are implemented to protect your data from
+                    unauthorized access.</li>
+                <li><strong>Cookies:</strong> Our website uses cookies to provide a better user experience.</li>
+            </ul>
+            <button id="close-privacy-popup" style="
+            margin-top: 20px;
+            background-color: #C71585;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: block;
+            margin: 20px auto; /* Centering the button */
+        ">Close</button>
+        </div>
+    </div>
+
+    <!-- Forgot Password Popup -->
+    <div id="forgot-password-popup" style="display: none;">
+        <div id="forgot-password-content" style="
+        background: rgba(0, 0, 0, 0.95);
+        padding: 30px;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 500px;
+        margin: 0 auto;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        overflow-y: auto;
+        max-height: 80vh;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        text-align: center;">
+            <h2 style="color: #C71585;">Reset Password</h2>
+            <p>Enter your email to receive a password reset link:</p>
+            <input type="email" id="reset-email" placeholder="Your Email" style="
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            width: 80%;
+            border: 1px solid white;">
+            <button id="send-reset-link" style="
+            background-color: #C71585;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;">Send Link</button>
+            <button id="close-forgot-password-popup" style="
+            margin-top: 20px;
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;">Close</button>
+        </div>
+    </div>
+    <!-- OTP Popup -->
+    <!-- OTP Popup -->
+    <div id="otp-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            background: #1b1b1b; padding: 30px; border-radius: 10px; color: white; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+            width: 90%; max-width: 400px;">
+        <h2 style="color: #C71585; text-align: center; margin-bottom: 15px;">Enter OTP</h2>
+        <p style="text-align: center; margin-bottom: 20px;">We have sent a 6-digit OTP to your registered email.</p>
+
+        <!-- Error Alert Box -->
+        <div id="otp-error-alert" style="display: none; background-color: #FFCCCC; color: red; padding: 10px; margin-bottom: 10px; 
+            border-radius: 5px; border-left: 4px solid red;">
+            <span id="otp-error-message"></span>
+        </div>
+
+        <input type="text" id="otp-input" maxlength="6" placeholder="Enter OTP"
+            style="width: 100%; padding: 10px; margin-bottom: 15px;
+            border: 1px solid #C71585; border-radius: 5px; background-color: #333; color: white; text-align: center; font-size: 16px;">
+
+        <button id="verify-otp" style="background-color: #C71585; color: white; padding: 10px; width: 100%; border: none; 
+            border-radius: 5px; cursor: pointer; transition: 0.3s;">Verify OTP</button>
+    </div>
+
+
+
+    <script src="js/login-register.js"></script>
+
+</body>
+
+</html>
