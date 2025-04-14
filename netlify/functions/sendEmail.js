@@ -20,16 +20,19 @@ export async function handler(event) {
         }),
       });
 
+      // Log response status
+      console.log(`Response status for ${toEmail}:`, res.status);
+
+      // If not successful, log detailed response and throw
       if (!res.ok) {
-        const error = await res.json();
-        throw new Error(`Failed to send to ${toEmail}: ${JSON.stringify(error)}`);
+        const errorText = await res.text(); // raw text in case it's not JSON
+        console.error(`Error response from Brevo for ${toEmail}:`, errorText);
+        throw new Error(`Failed to send email to ${toEmail}. Status: ${res.status}`);
       }
     };
 
-    // Send email to customer
+    // Send emails
     await sendEmail(customerEmail, customerContent, "Your Order Confirmation - Pookie Trend");
-
-    // Send email to admin
     await sendEmail(adminEmail, adminContent, "New Order Received - Pookie Trend");
 
     return {
