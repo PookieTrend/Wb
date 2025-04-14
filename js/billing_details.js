@@ -158,7 +158,7 @@ document.querySelector('.process-btn').addEventListener('click', async (e) => {
 
         setTimeout(() => {
             document.getElementById('loading-popup').remove(); // Remove the popup
-            window.location.href = "Order-Complete.html"; // Redirect after delay
+            // window.location.href = "Order-Complete.html"; // Redirect after delay
         }, 3000);
 
     } catch (error) {
