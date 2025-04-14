@@ -194,15 +194,15 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             body: JSON.stringify({ email, otp })
         })
-            .then(response => {
-                if (response.ok) {
-                    console.log("OTP sent successfully.");
-                } else {
-                    console.error("Failed to send OTP");
-                }
-            })
-            .catch(error => {
-                console.error("Error sending OTP:", error);
-            });
-    }
+        .then(response => {
+            if (response.ok) {
+                console.log("OTP sent successfully.");
+            } else {
+                console.error("Failed to send OTP");
+            }
+        })
+        .catch(error => {
+            console.error("Error sending OTP:", error);
+        });
+    }    
 });
