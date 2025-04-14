@@ -1,6 +1,6 @@
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
-exports.handler = async (event) => {
+export async function handler(event) {
   try {
     const { email, otp } = JSON.parse(event.body);
 
@@ -60,4 +60,4 @@ exports.handler = async (event) => {
       body: JSON.stringify({ message: "Failed to send OTP", error: err.message })
     };
   }
-};
+}
