@@ -187,47 +187,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function sendOTPEmail(email, otp) {
-        fetch("https://api.brevo.com/v3/smtp/email", {
+        return fetch("/.netlify/functions/sendRegisterOTP", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
-                "api-key": "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"
+                "Content-Type": "application/json"
             },
-            body: JSON.stringify({
-                sender: { name: "Pookie Trend", email: "trendpookie@gmail.com" },
-                to: [{ email: email }],
-                subject: "OTP Verification - Pookie Trend",
-                htmlContent: `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f0f0f0; border-radius: 10px; border: 1px solid #ddd;">
-                    <div style="text-align: center;">
-                        <img src="https://qonnughbkdvopqwqmxow.supabase.co/storage/v1/object/sign/product-images/LOGO4.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwcm9kdWN0LWltYWdlcy9MT0dPNC5wbmciLCJpYXQiOjE3NDI2ODU5MTIsImV4cCI6MTkwMDM2NTkxMn0.Y2L94dHjbhAE3KCmQnx1V6z4dLfBOOdLkc8Bp9T3dU0" alt="Pookie Trend Logo" width="100" style="margin-bottom: 20px;">
-                        <h2 style="color: #C71585;">OTP Verification</h2>
-                    </div>
-                    <p style="color: #333; line-height: 1.6;">
-                        Hello,<br><br>
-                        Your One-Time Password (OTP) for registration is:
-                    </p>
-                    <div style="text-align: center; margin: 20px 0;">
-                        <span style="font-size: 24px; font-weight: bold; padding: 10px 20px; background-color: #C71585; color: white; border-radius: 5px;">${otp}</span>
-                    </div>
-                    <p style="color: #333; line-height: 1.6;">
-                        Please enter this OTP to proceed. This OTP is valid for the next <strong>5 minutes</strong>.<br><br>
-                        If you did not request this, you can safely ignore this email.<br><br>
-                        Best regards,<br>
-                        <strong>Pookie Trend</strong>
-                    </p>
-                    <div style="text-align: center; margin-top: 30px;">
-                        <img src="https://qonnughbkdvopqwqmxow.supabase.co/storage/v1/object/sign/product-images/LOGO4.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJwcm9kdWN0LWltYWdlcy9MT0dPNC5wbmciLCJpYXQiOjE3NDI2ODU5MTIsImV4cCI6MTkwMDM2NTkxMn0.Y2L94dHjbhAE3KCmQnx1V6z4dLfBOOdLkc8Bp9T3dU0" alt="Pookie Trend Logo" width="80">
-                    </div>
-                </div>`
-            })
+            body: JSON.stringify({ email, otp })
         })
             .then(response => {
                 if (response.ok) {
                     console.log("OTP sent successfully.");
                 } else {
-                    console.error("Error sending OTP:", response.statusText);
+                    console.error("Failed to send OTP");
                 }
             })
-            .catch(error => console.error("Error sending OTP:", error));
+            .catch(error => {
+                console.error("Error sending OTP:", error);
+            });
     }
 });
